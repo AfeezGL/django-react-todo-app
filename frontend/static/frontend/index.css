@@ -21,6 +21,9 @@ header {
 header a {
   color: black;
 }
+
+/*-----------TASK PAGE-----------*/
+
 .task {
   display: flex;
   justify-content: space-between;
@@ -28,10 +31,12 @@ header a {
   padding: 1rem;
   border-radius: .3rem;
   margin-bottom: 1rem;
+  width: 100%;
 }
 .task p{
   font-size: 1.2rem;
   font-weight: 500;
+  width: 95%;
 }
 .task button {
   width: 1.2rem;
