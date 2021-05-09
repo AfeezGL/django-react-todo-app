@@ -3,7 +3,7 @@ import Task from './Task'
 import {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 
-const Tasks = () => {
+const Tasks = ({csrftoken}) => {
     const [allTasks, setAllTasks] = useState([])
 
     const apiCall = async (e) => {
@@ -16,8 +16,10 @@ const Tasks = () => {
         fetch(`/api/todo/${e.id}/`, {
             headers: {
                 "Content-Type": "application/json",
+                "X-CSRFToken": csrftoken
             },
             method: "PATCH",
+            mode: "same-origin",
             body: JSON.stringify({
                 "completed": true
             })
