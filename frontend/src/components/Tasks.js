@@ -33,12 +33,13 @@ const Tasks = () => {
 
 
     useEffect(() => {
-    const getTasks = async () => {
-        const tasksFromApi = await apiCall("/api/todo")
-        setAllTasks(tasksFromApi)
-        console.log(allTasks)
-    }
-    getTasks()
+        const getTasks = async () => {
+            let deviceId = window.localStorage.getItem("uuid")
+            const tasksFromApi = await apiCall(`/api/usertodos/${deviceId}`)
+            setAllTasks(tasksFromApi)
+            console.log(allTasks)
+        }
+        getTasks()
     }, [])
     return (
         <>

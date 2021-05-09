@@ -12,8 +12,10 @@ const AddTask = () => {
 
     const submitForm = (e) => {
         e.preventDefault()
+        let deviceId = window.localStorage.getItem("uuid")
         const formData = new FormData()
         formData.append("text", text)
+        formData.append("uuid", deviceId)
         fetch("/api/todo/", {
             method: "POST",
             body: formData
