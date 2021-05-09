@@ -27,6 +27,7 @@ const AddTask = () => {
             setTimeout(() => {
                 setShowAlert(false)
             }, 1000);
+            console.log(data)
         })
     }
 
