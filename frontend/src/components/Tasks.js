@@ -12,6 +12,7 @@ const Tasks = ({csrftoken}) => {
         return response
     }
 
+    //function to set a task as completed
     const completeTask = (e) => {
         fetch(`/api/todo/${e.id}/`, {
             headers: {
@@ -35,14 +36,16 @@ const Tasks = ({csrftoken}) => {
 
 
     useEffect(() => {
+        // get users tasks from the backend when the component mounts
         const getTasks = async () => {
             let deviceId = window.localStorage.getItem("uuid")
             const tasksFromApi = await apiCall(`/api/usertodos/${deviceId}`)
             setAllTasks(tasksFromApi)
-            console.log(allTasks)
         }
         getTasks()
     }, [])
+
+
     return (
         <>
             <header>
@@ -55,6 +58,7 @@ const Tasks = ({csrftoken}) => {
                 <section className="completed">
                     {allTasks.map(task => task.completed && <p key={task.id}>{task.text}</p>)}
                 </section>
+                {allTasks<1 && "No Tasks"}
             </main>
             <footer>
                 <Link to="/add" >+ add new</Link>

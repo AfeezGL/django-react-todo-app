@@ -6,10 +6,12 @@ const AddTask = ({csrftoken}) => {
     const [text, setText] = useState("")
     const [showAlert, setShowAlert] = useState(false)
 
+    //update the text state when tnput changes
     const updateText = (e) => {
         setText(e.target.value)
     }
 
+    //function for creating new task
     const submitForm = (e) => {
         e.preventDefault()
         let deviceId = window.localStorage.getItem("uuid")
@@ -28,8 +30,7 @@ const AddTask = ({csrftoken}) => {
             setShowAlert(!showAlert)
             setTimeout(() => {
                 setShowAlert(false)
-            }, 1000);
-            console.log(data)
+            }, 1000)
         })
     }
 

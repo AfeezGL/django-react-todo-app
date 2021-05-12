@@ -5,6 +5,7 @@ import Tasks from './Tasks'
 import AddTask from './AddTask'
 
 function App() {
+  // function to get a cookie from the browser
   function getCookie(name) {
     let cookieValue = null;
     if (document.cookie && document.cookie !== '') {
@@ -20,15 +21,15 @@ function App() {
     }
     return cookieValue;
   }
+  // get csrf token from the cookies
   const csrftoken = getCookie('csrftoken');
 
   useEffect(() => {
+    //set uuid if uuid does not exist in localstorage
     const handleUuid = () => {
       const onDeviceUuid = window.localStorage.getItem("uuid")
-      console.log("on device ", onDeviceUuid)
       if (onDeviceUuid === null || onDeviceUuid === undefined ) {
         const presaveUuid = uuidv4()
-        console.log("pre save ", presaveUuid)
         window.localStorage.setItem("uuid", presaveUuid)
       }
     }
