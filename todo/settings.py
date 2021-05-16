@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'f5)tj#0)6oha#ay@0@mx(eb^ej*8nr=f60_61_xy3g5s@b@7h5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["todoprj.herokuapp.com", "127.0.0.1"]
 
