@@ -137,5 +137,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 CORS_ALLOWED_ORIGINS = [
     "todoprj.herokuapp.com",
     "127.0.0.1",
-    "192.168.43.24:19000"
+    "192.168.43.24:19000",
+    "localhost:19000"
 ]
